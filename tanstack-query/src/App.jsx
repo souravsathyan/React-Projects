@@ -31,6 +31,8 @@ const router = createBrowserRouter([
 function App() {
   const queryClient = new QueryClient();
 
+  // gcTime 1.05.33
+
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>
