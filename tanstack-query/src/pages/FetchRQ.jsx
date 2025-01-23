@@ -1,10 +1,15 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { fetchPosts } from "../api/api";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 
 function FetchRQ() {
+  const [page, setPage] = useState(0);
+
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["posts"],
-    queryFn: fetchPosts,
+    queryKey: ["posts", page],
+    queryFn: () => fetchPosts(page),
+    placeholderData: keepPreviousData,
   });
 
   if (isLoading) {
@@ -22,12 +27,26 @@ function FetchRQ() {
           const { id, title, body } = curElem;
           return (
             <li key={id}>
-              <p>{title}</p>
-              <p>{body}</p>
+              <NavLink to={`/rq/${id}`}>
+                <p>{id}</p>
+                <p>{title}</p>
+                <p>{body}</p>
+              </NavLink>
             </li>
           );
         })}
       </ul>
+
+      <div className="pagination-section container">
+        <button
+          disabled={page === 0 ? true : false}
+          onClick={() => setPage(page - 3)}
+        >
+          Prev
+        </button>
+        <p>{page / 3 + 1} </p>
+        <button onClick={() => setPage(page + 3)}>Next</button>
+      </div>
     </div>
   );
 }
