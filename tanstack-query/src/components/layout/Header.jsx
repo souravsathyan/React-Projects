@@ -15,6 +15,9 @@ function Header() {
           <li>
             <NavLink to="/rq"> FetchRQ </NavLink>
           </li>
+          <li>
+            <NavLink to="/infinite"> Infinite </NavLink>
+          </li>
           {/* <li>
             <NavLink to="/infinite"> InfiniteScroll </NavLink>
           </li> */}
