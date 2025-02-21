@@ -57,3 +57,22 @@ Layout
    - create a react component from a layout.tsx/jsx 
    - that component takes a children prop which next js populate with page data
  - nextjs will automatically create if not created manually
+
+ MEta data
+ - meta data can be set in layout and page 
+ - layout will apply to all pages
+ - page meta data to taht speific page
+ - when meta data exists in multiple pages along a route, they merge together with page meta data and override layout metadata for matching properties.
+ - 2 types
+  - static
+   - already defined metadata
+  - dynamic
+   - dynamically generated from routes, paramets, external data,
+- will not work in use-client directive page
+- title
+ - can be given as string or object
+ - as object
+    - defeault : as fallback
+    - template : display a specific value in all metadata
+    - absolute : used to override parent's metatags
+    
