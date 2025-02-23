@@ -75,4 +75,18 @@ Layout
     - defeault : as fallback
     - template : display a specific value in all metadata
     - absolute : used to override parent's metatags
-    
+
+link 
+- used to navigate between pages
+
+usePathname
+ - used to get the current path
+
+ params
+ - object containing all the params passed in the url
+ - available in layout.tsx
+
+ searchParams
+  - object containing all the search params passed in the url like ?page=2, fileters=a,b,c
+  - not available in layout.tsx
+

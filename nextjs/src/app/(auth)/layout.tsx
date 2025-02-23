@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import "../global.css";
@@ -26,9 +26,15 @@ export default function AuthLayout({
       <body className="flex flex-col min-h-screen bg-gray-50 text-gray-900">
         <div className="gap-4 flex justify-center p-4 shadow-lg">
           {navLinks.map((link) => {
-            const isActive = pathName === link.href || (pathName.startsWith(link.href) && link.href !== '/')
+            const isActive =
+              pathName === link.href ||
+              (pathName.startsWith(link.href) && link.href !== "/");
             return (
-              <Link href={link.href} key={link.name} className={isActive ? "font-bold mr-4":"text-blue-400 mr-4"}>
+              <Link
+                href={link.href}
+                key={link.name}
+                className={isActive ? "font-bold mr-4" : "text-blue-400 mr-4"}
+              >
                 {link.name}
               </Link>
             );
