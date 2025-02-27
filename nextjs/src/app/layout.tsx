@@ -1,3 +1,4 @@
+import { ErrorWrapper } from "./error.wrapper";
 import "./global.css";
 
 export const metadata = {
@@ -18,12 +19,14 @@ export default function RootLayout({
             <h1 className="text-xl font-semibold text-white">Header</h1>
           </div>
         </header>
-        <main className="flex-1 container mx-auto p-6">{children}</main>
+        <main className="flex-1 container mx-auto p-6">
+          <ErrorWrapper>{children}</ErrorWrapper>
+        </main>
 
         <footer className="bg-gradient-to-r from-slate-700 to-slate-400 text-white p-5 shadow-inner">
           <div className="container mx-auto text-center">
             <p className="text-sm">
-              © {new Date().getFullYear()} My Website. All rights reserved.
+              © {new Date().getFullYear()} My Website. All rights reserved.pppp
             </p>
           </div>
         </footer>
