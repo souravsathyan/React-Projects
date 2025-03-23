@@ -1,6 +1,8 @@
-@import "tailwindcss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @plugin "tailwindcss-animate";
+/* @import "tailwindcss"; */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -120,4 +122,34 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes shiny-text {
+  0%,
+  90%,
+  100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+  }
+  30%,
+  60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+  }
+}
+
+.shiny-text {
+  position: relative;
+  display: inline-block;
+  color: #fff; /* Set text color */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiny-text 8s infinite;
+  --shiny-width: 50px; /* Adjust as needed */
 }

@@ -20,7 +20,7 @@ const SplashScreen = ({ finishLoading }: { finishLoading: () => void }) => {
       // Only set interval if we haven't reached the end
       animationInterval = setInterval(() => {
         setCurrentText((prevIndex) => prevIndex + 1);
-      }, 1500);
+      }, 600);
     } else {
       // When we reach the last greeting, wait a bit then finish loading
       setTimeout(finishLoading, 1500);
@@ -40,7 +40,7 @@ const SplashScreen = ({ finishLoading }: { finishLoading: () => void }) => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="text-white text-6xl font-bold"
+          className="text-white text-xl sm:text-4xl md:text-6xl font-bold"
         >
           {greetings[currentText]}
         </motion.h1>
