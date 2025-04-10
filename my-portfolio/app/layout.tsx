@@ -9,6 +9,7 @@ import ThemeProviders from "@/components/providers/ThemeProvider";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import SplashScreen from "@/components/loadingScreen";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
               {children}
             </>
           )}
+          <Toaster />
         </ThemeProviders>
       </body>
     </html>

@@ -85,10 +85,20 @@ const secondRow = skills.slice(skills.length / 2);
 
 export function InfiniteMovingSkillCards() {
   return (
-    <div className=" max-w-4xl rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
-      <h1 className="text-xl md:text-4xl mb-4">Technical Skills</h1>
-      <InfiniteMovingCards items={firstRow} direction="right" speed="normal" />
-      <InfiniteMovingCards items={secondRow} direction="left" speed="normal" />
-    </div>
+    <section className=" w-screen flex justify-center my-12">
+      <div className=" max-w-4xl rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
+        <h1 className="text-xl md:text-4xl mb-4">Skills</h1>
+        <InfiniteMovingCards
+          items={firstRow}
+          direction="right"
+          speed="normal"
+        />
+        <InfiniteMovingCards
+          items={secondRow}
+          direction="left"
+          speed="normal"
+        />
+      </div>
+    </section>
   );
 }

@@ -1,23 +1,23 @@
 "use client";
 
 import Intro from "@/components/Intro";
-import { TimelineDemo } from "@/components/myTimeline";
 import { InfiniteMovingSkillCards } from "@/components/skillMarquee";
 import { Spotlight } from "@/components/ui/spotlight";
-import ReactIcon from "@/public/icons/react";
-import { FaReact } from "react-icons/fa";
+import Projects from "./projects/page";
+import ContactMe from "./contact/page";
 
 export default function Home() {
   return (
-    <>
-      <section className="py-24 relative flex items-center justify-center min-h-screen overflow-hidden">
-        <Spotlight />
-        <Intro />
+    <div className="overflow-hidden">
+      <section className="py-24 relative flex items-center justify-center min-h-screen ">
+        <div className="">
+          <Spotlight />
+          <Intro />
+        </div>
       </section>
-      <section className=" w-screen flex justify-center my-12">
-        <InfiniteMovingSkillCards />
-      </section>
-      <TimelineDemo />
-    </>
+      <InfiniteMovingSkillCards />
+      <Projects />
+      <ContactMe />
+    </div>
   );
 }

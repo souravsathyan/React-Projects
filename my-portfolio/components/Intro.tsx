@@ -1,6 +1,13 @@
 import Image from "next/image";
 import myProfilePic from "@/public/images/authors/dummy.jpg";
 import { AnimatedShinyText } from "./magicui/animated-shiny-text";
+import CountUp from "react-countup";
+import {
+  EnvelopeClosedIcon,
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  MobileIcon,
+} from "@radix-ui/react-icons";
 
 function Intro() {
   return (
@@ -20,6 +27,29 @@ function Intro() {
               with others
             </p>
           </AnimatedShinyText>
+          <div className="flex mt-5 gap-x-4 items-center justify-center md:justify-start">
+            <div>
+              <h1 className="text-left text-2xl text-neutral-400">Projects</h1>
+              <CountUp
+                start={0}
+                delay={1}
+                end={10}
+                className="text-xl font-bold text-neutral-400"
+              />
+            </div>
+            <div>
+              <h1 className="text-left text-2xl text-neutral-400">
+                Experience
+              </h1>
+              <CountUp
+                start={0}
+                delay={1}
+                end={2.3}
+                decimals={1}
+                className="text-xl font-bold text-neutral-400"
+              />
+            </div>
+          </div>
         </div>
         <div className="relative mx-auto md:mx-0">
           <Image
@@ -30,6 +60,36 @@ function Intro() {
             height={400}
             priority
           />
+          <div className="flex mt-6 gap-x-6 items-center justify-center ">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-500 transition-colors"
+            >
+              <GitHubLogoIcon width={24} height={24} />
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-500 transition-colors"
+            >
+              <LinkedInLogoIcon width={24} height={24} />
+            </a>
+            <a
+              href="mailto:your.email@example.com"
+              className="hover:text-gray-500 transition-colors"
+            >
+              <EnvelopeClosedIcon width={24} height={24} />
+            </a>
+            <a
+              href="tel:+1234567890"
+              className="hover:text-gray-500 transition-colors"
+            >
+              <MobileIcon width={22} height={22} />
+            </a>
+          </div>
         </div>
       </section>
     </div>
